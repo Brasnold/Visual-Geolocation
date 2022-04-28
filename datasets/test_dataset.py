@@ -52,6 +52,12 @@ class TestDataset(data.Dataset):
         self.queries_utms  = np.array([(path.split("@")[1], path.split("@")[2]) for path in self.queries_paths]).astype(np.float)
         
         # Find positives_per_query, which are within positive_dist_threshold (default 25 meters)
+
+        #debug
+        print(self.database_utms.shape)
+        print(self.dataset_utms[:3])
+        #
+
         knn = NearestNeighbors(n_jobs=-1)
         knn.fit(self.database_utms)
         self.positives_per_query = knn.radius_neighbors(self.queries_utms, 
