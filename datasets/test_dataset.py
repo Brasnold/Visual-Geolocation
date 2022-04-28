@@ -30,6 +30,15 @@ class TestDataset(data.Dataset):
         self.database_folder = os.path.join(dataset_folder, database_folder)
         self.queries_folder = os.path.join(dataset_folder, queries_folder)
         self.dataset_name = os.path.basename(dataset_folder)
+
+        #debug
+        import logging
+        logging.info("debug")
+        logging.info(f"{self.dataset_folder}")
+        logging.info(f"{self.database_folder}")
+        logging.info(f"{self.queries_folder}")
+        logging.info(f"{self.dataset_name}")
+        #
         
         if not os.path.exists(self.dataset_folder):
             raise FileNotFoundError(f"Folder {self.dataset_folder} does not exist")
