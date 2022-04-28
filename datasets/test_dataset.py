@@ -54,8 +54,10 @@ class TestDataset(data.Dataset):
         # Find positives_per_query, which are within positive_dist_threshold (default 25 meters)
 
         #debug
-        print(self.database_utms.shape)
-        print(self.dataset_utms[:3])
+        import logging
+        logging.info("debug")
+        logging.info(f"{self.database_utms.shape}")
+        logging.info(f"{self.database_utms[:3]}")
         #
 
         knn = NearestNeighbors(n_jobs=-1)
