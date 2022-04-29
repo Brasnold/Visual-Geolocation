@@ -58,7 +58,7 @@ logging.info(f"The {len(groups)} groups have respectively the following number o
 val_ds = TestDataset(args.val_set_folder, positive_dist_threshold=args.positive_dist_threshold)
 test_ds = TestDataset(args.test_set_folder, queries_folder="queries_v1",
                       positive_dist_threshold=args.positive_dist_threshold)
-test_ds_tokyo = TestDataset("/content/drive/MyDrive/tokyo_xs/test/",positive_dist_threshold=args.positive_dist_threshold)
+test_ds_tokyo = TestDataset("/content/tokyo_xs/test/",positive_dist_threshold=args.positive_dist_threshold)
 #test_ds_tokyo_night = TestDataset("/content/drive/MyDrive/tokyo_night/test/", positive_dist_threshold=args.positive_dist_threshold)
 
 logging.info(f"Validation set: {val_ds}")
